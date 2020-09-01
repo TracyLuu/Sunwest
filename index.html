@@ -70,7 +70,7 @@
       <input type="number" id="loan" min="1" required><br>
     </div>
     <div class="line">
-      <input type="submit" >
+      <input type="submit" id="submit">
     </div>
   </form>
   </div>
@@ -83,11 +83,10 @@
   document.getElementById('tel').defaultValue = "123-123-1234";
   document.getElementById('loan').defaultValue = "1000";
 
-  let button =
-
-  let fullName = document.getElementById('name').split(' ');
+  let fullName = document.getElementById('submit');
   let firstName = fullName[0];
   let lastName = fullName[fullName.length-1];
+  console.log(fullName);
   console.log(firstName);
   console.log(lastName);
 </script>
