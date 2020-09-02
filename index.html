@@ -79,16 +79,16 @@
   </div>
 
 <script>
-  document.getElementById('email').defaultValue = "afdf@gnail.com";
-  document.getElementById('tel').defaultValue = "123-123-1234";
-  document.getElementById('loan').defaultValue = "1000";
+  let sumbit = document.getElementById('submit');
 
-  let fullName = document.getElementById('submit');
-  let firstName = fullName[0];
-  let lastName = fullName[fullName.length-1];
-  console.log(fullName);
-  console.log(firstName);
-  console.log(lastName);
+  submit.addEventListener('click', function(event){
+    let fullName = document.getElementById('name').value;
+
+    document.getElementById('name').innerHTML = fullName;
+    let firstName = fullName.split(' ').slice(0, -1).join(' ');
+    let lastName = fullName.split(' ').slice(-1).join(' ');
+  })
+
 </script>
 
 </body>
