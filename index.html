@@ -20,7 +20,8 @@
     }
 
     form {
-      border: 1px solid gray;
+      border: 1px solid #1d4a8c;
+      border-radius: 3px;
       text-align: center;
       margin: 30px;
       padding: 30px;
@@ -31,52 +32,83 @@
       display: block;
     }
 
+    .CTA {
+      margin: 10px;
+      padding-bottom: 10px;
+    }
+
     .contact {
       text-align: center;
+      font-size: 14px;
     }
+
+    #submit {
+      margin-top: 10px;
+      background-color: #1d4a8c;
+      color: white;
+      border: 1px solid #6089c7;
+      border-radius: 3px;
+      width: 100px;
+    }
+
+    .body {
+      width: 750px;
+      margin: auto;
+    }
+
+    input {
+      border: 1px solid #1d4a8c;
+      border-radius: 3px;
+    }
+
+    @media screen and (max-width: 768px){
+      .body {
+        width: 350px;
+      }
+    }
+
   </style>
 </head>
 <body>
-  <div class="header">
-    <img class="logo" src="assets/sunwest-bbefe-logo-2x.png">
+  <div class="body">
+    <div class="header">
+      <img class="logo" src="assets/sunwest-bbefe-logo-2x.png">
+    </div>
+    <div class="form">
+      <form action="https://staging.sunwestbank.com/test_form/" method="post">
+        <div class="CTA">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt animi rem corrupti laudantium magni atque, enim
+          dicta consectetur, voluptates assumenda dolor? Nostrum saepe doloremque dignissimos earum laudantium fuga ad!
+        </div>
+
+        <div class="line">
+          <label class="labels">Name:</label><br>
+          <input type="text" id='name' required><br>
+        </div>
+        <div class="line">
+          <label class="labels">Email Address:</label><br>
+          <input type="email" id='email' required><br>
+        </div>
+        <div class="line">
+          <label class="labels">Phone Number:</label><br>
+          <input type="tel" id='tel' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            oninvalid="this.setCustomValidity('Invalid format. Please use the following format ###-###-####')"
+            placeholder="123-456-7890" required><br>
+        </div>
+        <div class="line">
+          <label class="labels">Loan Amount:</label><br>
+          <input type="number" id="loan" min="1" required><br>
+        </div>
+        <div class="line">
+          <input type="submit" id="submit">
+        </div>
+      </form>
+    </div>
+    <div class="contact">
+      If you have any questions please call 111-111-1111.
+    </div>
   </div>
-  <div class="CTA">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt animi rem corrupti laudantium magni atque, enim dicta consectetur, voluptates assumenda dolor? Nostrum saepe doloremque dignissimos earum laudantium fuga ad omnis!
-  </div>
-  <div class="form">
-  <form action="https://staging.sunwestbank.com/test_form/" method="post">
-    <div class="line">
-      <label class="labels">Name:</label><br>
-      <input type="text" id='name' required><br>
-    </div>
-    <!-- <div class="line">
-      <label class="labels">First Name:</label><br>
-      <input type="text" required><br>
-    </div>
-    <div class="line">
-      <label class="labels">Last Name:</label><br>
-      <input type="text" required><br>
-    </div> -->
-    <div class="line">
-      <label class="labels">Email Address:</label><br>
-      <input type="email" id='email' required><br>
-    </div>
-    <div class="line">
-      <label class="labels">Phone Number:</label><br>
-      <input type="tel" id='tel' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="this.setCustomValidity('Invalid format. Please use the following format ###-###-####')" placeholder="123-456-7890" required><br>
-    </div>
-    <div class="line">
-      <label class="labels">Loan Amount:</label><br>
-      <input type="number" id="loan" min="1" required><br>
-    </div>
-    <div class="line">
-      <input type="submit" id="submit">
-    </div>
-  </form>
-  </div>
-  <div class="contact">
-    If you have any questions please call 111-111-1111.
-  </div>
+
 
 <script>
   let sumbit = document.getElementById('submit');
@@ -88,7 +120,6 @@
     let firstName = fullName.split(' ').slice(0, -1).join(' ');
     let lastName = fullName.split(' ').slice(-1).join(' ');
   })
-
 </script>
 
 </body>
